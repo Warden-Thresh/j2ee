@@ -9,17 +9,18 @@ import javax.swing.text.html.HTML;
 
 public class LoginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException {
-		
+		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		System.out.println("name:"+name);
 		System.out.println("password:"+password);
 		String html =null;
 		if ("admin".equals(name)&&"123".equals(password)) {
-			html = "<div style ='color:green'>success</div>";
+			html = "<div style ='color:green'>µÇÂ¼³É¹¦</div>";
 		}else{
-			html = "<div style='color:red'>fail</div>";
+			html = "<div style='color:red'>µÇÂ¼Ê§°Ü</div>";
 		}
+		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter printWriter =  response.getWriter();
 		printWriter.println(html);
 	}
