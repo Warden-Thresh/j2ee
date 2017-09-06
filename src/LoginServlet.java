@@ -10,7 +10,7 @@ public class LoginServlet extends HttpServlet{
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		System.out.println("name:"+name);
-		System.out.println("password£º"+password);
+		System.out.println("password:"+password);
 		response.getWriter().println("name£º"+name+"\n"+"password£º"+password);
 	}
 	
