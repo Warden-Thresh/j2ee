@@ -14,15 +14,13 @@ public class LoginServlet extends HttpServlet{
 		String password = request.getParameter("password");
 		System.out.println("name:"+name);
 		System.out.println("password:"+password);
-		String html =null;
+
 		if ("admin".equals(name)&&"123".equals(password)) {
-			html = "<div style ='color:green'>µÇÂ¼³É¹¦</div>";
+			request.getRequestDispatcher("success.html").forward(request, response);
 		}else{
-			html = "<div style='color:red'>µÇÂ¼Ê§°Ü</div>";
+			response.sendRedirect("fail.html");
 		}
-		response.setContentType("text/html; charset=UTF-8");
-		PrintWriter printWriter =  response.getWriter();
-		printWriter.println(html);
+
 	}
 	
 }
