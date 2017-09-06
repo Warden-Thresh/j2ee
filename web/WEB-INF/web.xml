@@ -3,6 +3,7 @@
 	<servlet>
 		<servlet-name>HelloServlet</servlet-name>
 		<servlet-class>HelloServlet</servlet-class>
+		<load-on-startup>10</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
