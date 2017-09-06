@@ -9,6 +9,7 @@ import javax.swing.text.html.HTML;
 
 public class LoginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException {
+		
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		System.out.println("name:"+name);
