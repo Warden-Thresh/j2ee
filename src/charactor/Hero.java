@@ -85,4 +85,9 @@ public class Hero {
     public boolean isDead() {
         return 0>=hp?true:false;
     }
+
+    @Override
+    public String toString() {
+        return "Hero [name"+name+",hp="+hp +"]";
+    }
 }
