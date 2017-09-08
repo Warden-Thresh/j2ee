@@ -12,18 +12,32 @@ import java.util.List;
 
 public class HeroListServlet extends HttpServlet{
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        List<Hero> heroes = new HeroDao().list();
-        StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("<table align='center' border='1' cellspacing='0'>\r\t");
-        stringBuffer.append("<tr><td>id</td><td>name</td><td>hp</td><td>damage</td><td>edit</td><td>delete</td><tr>\r\n");
-        String trFormat = "<tr><td>%d</td><td>%s</td><td>%f</td><td>%d</td><td><a href='editHero?id=%d'>edit</a></td><td><a href='deleteHero?id=%d'>delete</a></td></tr>\r\n";
-        for (Hero hero :
-                heroes) {
-            String tr = String.format(trFormat, hero.getId(), hero.getName(), hero.getHp(), hero.getDamage(),hero.getId(),hero.getId());
-            stringBuffer.append(tr);
+        int start = 0;
+        int count = 5;
+        try {
+            start = Integer.parseInt(request.getParameter("start"));
+        } catch (NumberFormatException e) {
+            //当浏览器没有传参数start时
         }
-        stringBuffer.append("</table>");
-        response.getWriter().write(stringBuffer.toString());
+        int next = start + count;
+        int pre = start - count;
+
+        int total = new HeroDao().getTotal();
+        System.out.println(total);
+        int last;
+        if (0 == total % count) {
+            last = total - count;
+        }else {
+            last=total-total%count;
+        }
+        pre = pre < 0 ? 0 : pre;
+        next = next > last ? last : next;
+        response.setContentType("text/html;charset=UTF-8");
+        List<Hero> heroes = new HeroDao().list(start,count);
+        request.setAttribute("pre",pre);
+        request.setAttribute("next", next);
+        request.setAttribute("last", last);
+        request.setAttribute("heroes",heroes);
+        request.getRequestDispatcher("listHero.jsp").forward(request,response);
     }
 }

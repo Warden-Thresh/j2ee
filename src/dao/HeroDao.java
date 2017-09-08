@@ -29,7 +29,7 @@ public class HeroDao implements DAO{
         int total = 0;
         try(Connection c = getConnection();
             Statement s = c.createStatement()){
-            String sql = "SELECT COUNT (*) FROM hero";
+            String sql = "SELECT COUNT(*) FROM hero";
             ResultSet rs = s.executeQuery(sql);
             while (rs.next()) {
                 total = rs.getInt(1);
