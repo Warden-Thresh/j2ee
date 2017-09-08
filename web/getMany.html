@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+<input type="button" value="通过AJAX从服务器获取多个英雄" id="sender">
+<div id="messageDiv"></div>
+
+<script>
+    $('#sender').click(function () {
+        var url = "getManyServlet";
+        $.post(
+            url,
+            function (data) {
+                var heroes =$.parseJSON(data);
+               for (i in heroes){
+                   var old = $("#messageDiv").html();
+                   var hero = heroes[i];
+                   $("#messageDiv").html(old+"<br>"+hero.name+"------"+hero.hp);
+               }
+            });
+    })
+</script>
+</body>
+</html>
