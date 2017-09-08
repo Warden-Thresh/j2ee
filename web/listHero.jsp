@@ -10,9 +10,18 @@
 <html>
 <head>
     <title>英雄列表</title>
+    <script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('a').addClass("btn btn-default btn-xs");
+
+        });
+    </script>
 </head>
 <body>
-<table align="center" border="1" cellspacing="0">
+<table style="width:500px; margin:44px auto" class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>
     <tr>
         <td>id</td>
         <td>name</td>

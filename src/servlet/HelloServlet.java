@@ -1,4 +1,4 @@
-package Servlet;
+package servlet;
 
 import java.io.IOException;
 import java.util.Date;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HelloServlet extends HttpServlet{
 	public void init(ServletConfig config){
-        System.out.println("init of Hello Servlet");
+        System.out.println("init of Hello servlet");
     }
 	public void doGet(HttpServletRequest request,HttpServletResponse response){
 		try {

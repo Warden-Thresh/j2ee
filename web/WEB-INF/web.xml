@@ -11,6 +11,9 @@
         <filter-name>FirstFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <listener>
+        <listener-class>listener.ContextListener</listener-class>
+    </listener>
 
     <filter>
         <filter-name>EncodingFilter</filter-name>
@@ -32,7 +35,7 @@
 
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
-        <servlet-class>Servlet.HelloServlet</servlet-class>
+        <servlet-class>servlet.HelloServlet</servlet-class>
         <load-on-startup>10</load-on-startup>
     </servlet>
     <servlet-mapping>
@@ -42,7 +45,7 @@
     
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>Servlet.LoginServlet</servlet-class>
+        <servlet-class>servlet.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -51,7 +54,7 @@
     
     <servlet>
         <servlet-name>UploadPhotoServlet</servlet-name>
-        <servlet-class>Servlet.UploadPhotoServlet</servlet-class>
+        <servlet-class>servlet.UploadPhotoServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UploadPhotoServlet</servlet-name>
@@ -60,7 +63,7 @@
     
     <servlet>
         <servlet-name>HeroListServlet</servlet-name>
-        <servlet-class>Servlet.HeroListServlet</servlet-class>
+        <servlet-class>servlet.HeroListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HeroListServlet</servlet-name>
@@ -69,7 +72,7 @@
     
     <servlet>
         <servlet-name>HeroAddServlet</servlet-name>
-        <servlet-class>Servlet.HeroAddServlet</servlet-class>
+        <servlet-class>servlet.HeroAddServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HeroAddServlet</servlet-name>
@@ -78,7 +81,7 @@
     
     <servlet>
         <servlet-name>HeroDeleteServlet</servlet-name>
-        <servlet-class>Servlet.HeroDeleteServlet</servlet-class>
+        <servlet-class>servlet.HeroDeleteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HeroDeleteServlet</servlet-name>
@@ -87,7 +90,7 @@
     
     <servlet>
         <servlet-name>HeroEditServlet</servlet-name>
-        <servlet-class>Servlet.HeroEditServlet</servlet-class>
+        <servlet-class>servlet.HeroEditServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HeroEditServlet</servlet-name>
@@ -96,7 +99,7 @@
     
     <servlet>
         <servlet-name>HeroUpdateServlet</servlet-name>
-        <servlet-class>Servlet.HeroUpdateServlet</servlet-class>
+        <servlet-class>servlet.HeroUpdateServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HeroUpdateServlet</servlet-name>
@@ -105,7 +108,7 @@
 
     <servlet>
         <servlet-name>SubmitServlet</servlet-name>
-        <servlet-class>Servlet.SubmitServlet</servlet-class>
+        <servlet-class>servlet.SubmitServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SubmitServlet</servlet-name>
@@ -114,7 +117,7 @@
 
     <servlet>
         <servlet-name>GetOneServlet</servlet-name>
-        <servlet-class>Servlet.GetOneServlet</servlet-class>
+        <servlet-class>servlet.GetOneServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GetOneServlet</servlet-name>
@@ -123,7 +126,7 @@
 
     <servlet>
         <servlet-name>GetManyServlet</servlet-name>
-        <servlet-class>Servlet.GetManyServlet</servlet-class>
+        <servlet-class>servlet.GetManyServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GetManyServlet</servlet-name>

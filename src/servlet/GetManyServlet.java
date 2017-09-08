@@ -1,4 +1,4 @@
-package Servlet;
+package servlet;
 
 import charactor.Hero;
 import net.sf.json.JSONSerializer;
